@@ -15,7 +15,7 @@
 ## 실행 방법
 1. penetrate_sky.py 실행
 
-    penetrate_sky.py
+    python penetrate_sky.py
 
 2. http://127.0.0.1:5000 접속
 3. 관측날짜, 관측위치, 관측대상 입력
