@@ -9,4 +9,5 @@
 
 ### API KEY
 기상청 API(penetrate_sky.py의 forcast3(), forcast10() keys='')
+
 카카오 지도 API(sky_result.html.j2의 appkey= 부분)
