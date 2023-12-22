@@ -1,0 +1,78 @@
+<!-- templates/sky_result.html -->
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penetrate Sky</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/style2.css">
+    <script>
+        var data = {{ data | tojson | safe }};
+    </script>
+</head>
+<body>
+<!-- header -->
+    <header>
+        <div class="container">
+            <h1>
+                <button onclick="goBack()" data-animation-scroll="true">Penetrate Sky</button>
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <button data-animation-scroll="true" data-target="#result">Result</button>
+                    </li>
+                    <li>
+                        <button data-animation-scroll="true" data-target="#solar">Solar</button>
+                    </li>
+                    <li>
+                        <button data-animation-scroll="true" data-target="#recommend">Recommend</button>
+                    </li>   
+                </ul>
+            </nav>
+        </div>
+    </header>
+<!-- description -->
+    <section id="result">
+        <div class="container">
+            <div class="title">
+                <h2>Result</h2>
+            </div>
+            <div class="descrip_Sheet">
+                <p>{{ data[0] }}</p>
+                <p>{{ data[1] }}</p>
+            </div>
+        </div>
+    </section>
+    <!-- solar -->
+    <section id="solar">
+        <div class="container">
+            <div class="title">
+                <h2>Solar System</h2>
+            </div>
+            <div class="space">
+                    <img width="40" height="40" class="planet" src="../static/image/sun.png" style="transform-origin: 50% 50%; left: 47.5%; top: 45%; width: 40px; height: 40px;">
+                    <img width="32" height="32" class="planet" src="../static/image/earth.png" style="left: 49%; top: 77%; width: 22.575px; height: 22.575px;">
+                    <div id="in-orbit" class="orbit"></div>
+                    <div id="out-orbit" class="orbit"></div>
+                    <div id="moon-orbit" class="orbit"></div>
+                </div>
+            </div>
+            <button class="mouse"><i class="fa-solid fa-computer-mouse"></i></button>
+        </div>
+    </section>
+    <section id="recommend">
+        <div class="container">
+            <div class="title">
+                <h2>Recommend</h2>
+            </div>
+            <div id="map"></div>
+        </div>
+    </section>
+    <!-- 카카오 지도 api key값 입력 appkey={appkey} -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=&libraries=services,clusterer,drawing"></script>
+    <script type="text/javascript" src="../static/script2.js"></script>
+</body>
+</html>
